@@ -27,7 +27,7 @@ Install Visual Studio
 
 ```
 Launch the Visual Studio Installer
-Udate Visual Studio Community to the latest version for that edition (2019 16.4.2 recommended)
+Update Visual Studio Community to the latest version for that edition (2019 16.4.2 recommended)
 ```
 
 Add the WiX extension

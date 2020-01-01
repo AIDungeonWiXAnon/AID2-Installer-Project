@@ -18,6 +18,7 @@
            Manufacturer="!(loc.Developer)"
            UpgradeCode="$(var.UpgradeGUID)">
     
+    <!-- Warning here can be safely ignored, IntelliSense doesn't understand the $() reference to a variable -->
     <Package InstallerVersion="200"
              Compressed="yes"
              InstallScope="perMachine"
@@ -96,7 +97,6 @@
       <ComponentGroupRef Id="SavesFiles" />
     </Feature> 
     
-    <!-- Not particularly proud of the nested ifelse statements, but After doesn't suport conditional ORs -->
     <InstallExecuteSequence>
       <Custom Action="GPU1_CUDASetup" Before="InstallFiles">
         <![CDATA[GPUACCELERATION]]>

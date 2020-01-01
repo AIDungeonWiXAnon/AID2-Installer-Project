@@ -5,7 +5,7 @@
      xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
 
   <!--
-  WiX-based MSI Installer for AI Dungeon 2: Clover Edition (using Pytorch)
+  WiX-based EXE bootstrap Installer for AI Dungeon 2: Clover Edition (using Pytorch)
   Developed by: Friendly /vp/oreon
   Last clone from GitHub: c74ba69
   Installs the Clover Edition of AI Dungeon 2 into a given directory and autoinstalls all prerequisites, including Anaconda (Python 3.7) and related packages on Windows 7+ systems.
@@ -22,7 +22,6 @@
           IconSourceFile="$(var.AID2 Clover Edition Installer Beta.ProjectDir)SourceFiles\icon.ico"
           Compressed="yes">
 
-    <!-- Blank URL for the license defaults to hiding the license -->
     <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense">
       <bal:WixStandardBootstrapperApplication
         LicenseFile="$(var.ProjectDir)Assets\README.rtf"
@@ -60,6 +59,8 @@
     
     
 		<Chain>
+      
+      <!-- TODO: Get Git LFS working so these can be included for compile purposes -->
       <?if $(var.Platform)=x64 ?>
       <ExePackage Id="Anaconda3" SourceFile="$(var.ProjectDir)Assets\Anaconda3-2019.10-Windows-x86_64.exe" Compressed="yes" PerMachine="yes" InstallCondition="NOT AnacondaFoundx64" />
       <?else?>

@@ -8,15 +8,11 @@
   
   <Fragment>
     <Binary Id="WixUIBannerBmp" SourceFile="$(var.ProjectDir)Assets\Banner.bmp" /> <!-- Allows Control type Bitmap to load a banner -->
-    <!--
-    <Property Id="GPUACCELERATION" Secure="yes" />
-    <Property Id="COLORTERMINALSUPPORT" Secure="yes" />
-    <Property Id="INSTALLTORRENT" Secure="yes" />
-    -->
     
     <UI>
       <Dialog Id="AdvancedFeaturesDlg" Width="370" Height="270" Title="!(loc.AppName_$(var.Platform)) Setup" NoMinimize="no">
 
+        <!-- CheckBoxValue can be any value, so long as the property is created (unchecked boxes will delete/not create their associated property) -->
         <Control Type="CheckBox" Id="GPUBox" Width="140" Height="14" X="40" Y="65" Text="!(loc.GPUBoxText)" Property="GPUACCELERATION" CheckBoxValue="1" />
         <Control Type="Text" Id="GPUText" Width="300" Height="40" X="40" Y="80" Text="!(loc.GPUDescription)" />
         
