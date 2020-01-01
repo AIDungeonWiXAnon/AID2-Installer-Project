@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <!--
+  Created Directories installer file
+  Responsible for defining all folders to be created during WiX installation process
+  -->
+
+  <!-- TARGETDIR and ProgramFilesFolder will almost always resolve to C:\Program Files -->
+  <Fragment>
+    <?if $(var.Platform)=x64 ?>
+    <?define PlatformProgramFilesFolder = "ProgramFiles64Folder"?>
+    <?else?>
+    <?define PlatformProgramFilesFolder = "ProgramFilesFolder"?>
+    <?endif?>
+    
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="$(var.PlatformProgramFilesFolder)">
+        <Directory Id="INSTALLDIR">
+          <Directory Id="INSTALLFOLDER" Name="AID2 Clover Edition">
+            <Directory Id="DataFolder" Name="data"></Directory>
+            <Directory Id="ImagesFolder" Name="images"></Directory>
+            <Directory Id="InterfaceFolder" Name="interface"></Directory>
+            <Directory Id="ModelsFolder" Name="models">
+              <Directory Id="PytorchGPT2XLFolder" Name="pytorch-gpt2-xl-aid2-v5"></Directory>
+            </Directory>
+            <Directory Id="PromptsFolder" Name="prompts">
+              <Directory Id="CloveranonFolder" Name="cloveranon-prompts"></Directory>
+            </Directory>
+            <Directory Id="SavesFolder" Name="saves"></Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+  </Fragment>
+
+</Wix>

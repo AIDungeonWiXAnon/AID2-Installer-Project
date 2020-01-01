@@ -1,0 +1,3 @@
+Write a prompt that describes your character and starting situation in as little space as possible.
+The first line will be permanently added to the AI's memory for this session.
+The second line will eventually be forgotten and so can be longer and include temporary information.

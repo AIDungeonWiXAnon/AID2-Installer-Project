@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <!--
+  Custom commands file
+  Responsible for defining Anaconda, Python package, and torrent install commands
+  -->
+
+  <Fragment>
+    <Property Id="CMD">
+      <DirectorySearch Id="SysDir" Path="[SystemFolder]" Depth="1">
+        <FileSearch Id="CmdExe" Name="cmd.exe"/>
+      </DirectorySearch>
+    </Property>
+
+    <!-- TODO: Check GPU VRAM and warn if underneath at least 4GB of VRAM -->
+    <CustomAction Id="GPU1_CUDASetup" Property="CMD" ExeCommand="/C title Pytorch Installer &amp; color f0 &amp; echo Initalizing... &amp; conda install pytorch cudatoolkit=10.1 -c pytorch --yes &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
+    <CustomAction Id="GPU2_CUDASetup" Property="CMD" ExeCommand="/C title cuDNN Installer &amp; color f0 &amp; echo Initalizing... &amp; conda install -c anaconda cudnn --yes &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
+    <CustomAction Id="CPU_CUDASetup" Property="CMD" ExeCommand="/C title Pytorch Installer &amp; color f0 &amp; echo Initalizing... &amp; conda install pytorch cpuonly -c pytorch --yes &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
+
+    <CustomAction Id="Color_PythonPackageSetup" Property="CMD" ExeCommand="/C title Python Package Installer &amp; color f0 &amp; echo Initalizing... &amp; pip install transformers pyjarowinkler colorama &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
+    <CustomAction Id="NoColor_PythonPackageSetup" Property="CMD" ExeCommand="/C title Python Package Installer &amp; color f0 &amp; echo Initalizing... &amp; pip install transformers pyjarowinkler &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
+
+    <CustomAction Id="InstallTorrent" Property="CMD" ExeCommand="/C title Torrent Installer &amp; color f0 &amp; echo Initalizing... &amp; &quot;[INSTALLFOLDER]model.torrent&quot; &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
+  </Fragment>
+
+</Wix>

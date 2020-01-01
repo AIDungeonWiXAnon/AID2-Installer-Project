@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <!--
+  UI configuration file
+  Responsible for creation of custom dialog box to handle GPU acceleration and color terminal options
+  -->
+  
+  <Fragment>
+    <Binary Id="WixUIBannerBmp" SourceFile="$(var.ProjectDir)Assets\Banner.bmp" /> <!-- Allows Control type Bitmap to load a banner -->
+    <!--
+    <Property Id="GPUACCELERATION" Secure="yes" />
+    <Property Id="COLORTERMINALSUPPORT" Secure="yes" />
+    <Property Id="INSTALLTORRENT" Secure="yes" />
+    -->
+    
+    <UI>
+      <Dialog Id="AdvancedFeaturesDlg" Width="370" Height="270" Title="!(loc.AppName_$(var.Platform)) Setup" NoMinimize="no">
+
+        <Control Type="CheckBox" Id="GPUBox" Width="140" Height="14" X="40" Y="65" Text="!(loc.GPUBoxText)" Property="GPUACCELERATION" CheckBoxValue="1" />
+        <Control Type="Text" Id="GPUText" Width="300" Height="40" X="40" Y="80" Text="!(loc.GPUDescription)" />
+        
+        <Control Type="CheckBox" Id="PythonBox" Width="140" Height="14" X="40" Y="125" Text="!(loc.PythonPackageBoxText)" Property="COLORTERMINALSUPPORT" CheckBoxValue="1" />
+        <Control Type="Text" Id="PythonText" Width="300" Height="35" X="40" Y="140" Text="!(loc.PythonPackageDescription)" />
+
+        <Control Type="CheckBox" Id="TorrentBox" Width="140" Height="11" X="40" Y="175" CheckBoxValue="1" Property="INSTALLTORRENT" Text="!(loc.TorrentBoxText)" />
+        <Control Type="Text" Id="TorrentText" Width="300" Height="35" X="40" Y="190" Text="!(loc.TorrentDescription)" />
+        
+        <Control Type="PushButton" Id="Back" Width="56" Height="17" X="180" Y="243" Text="!(loc.BackButton)" />
+        <Control Type="PushButton" Id="Next" Width="56" Height="17" X="236" Y="243" Text="!(loc.NextButton)" />
+        <Control Type="PushButton" Id="Cancel" Width="56" Height="17" X="304" Y="243" Text="!(loc.CancelButton)" />
+        
+        <Control Type="Bitmap" Id="BannerBitmap" Width="370" Height="44" X="0" Y="0" Text="WixUIBannerBmp" TabSkip="no" />
+        <Control Type="Line" Id="DetailLine" Width="370" Height="2" X="0" Y="234" />
+        <Control Type="GroupBox" Id="DecorationBox" Width="330" Height="180" X="18" Y="47" />
+
+        <Control Type="Text" Id="DialogHeaderText" Width="160" Height="12" X="15" Y="6" Text="{\WixUI_Font_Title}!(loc.DialogHeader)" Transparent="yes" />
+        <Control Type="Text" Id="DialogDescription" Width="280" Height="15" X="25" Y="23" Text="!(loc.DialogDescription)" Transparent="yes" />
+        <Control Type="Text" Id="OptionsHeader" Width="66" Height="12" X="145" Y="47" Text="!(loc.OptionsHeader)" />
+       
+      </Dialog>
+    </UI>
+  </Fragment>
+
+</Wix>

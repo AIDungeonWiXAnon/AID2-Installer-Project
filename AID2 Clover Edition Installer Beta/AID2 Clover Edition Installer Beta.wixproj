@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" InitialTargets="EnsureWixToolsetInstalled" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.10</ProductVersion>
+    <ProjectGuid>a51c4f24-2f4c-45d5-864d-ae6eedbd7a6d</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>AID2-Clover-Edition-Installer-Beta</OutputName>
+    <OutputType>Package</OutputType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DefineConstants>Debug</DefineConstants>
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CustomCommands.wxs" />
+    <Compile Include="CreatedDirectories.wxs" />
+    <Compile Include="InstalledComponents.wxs" />
+    <Compile Include="Product.wxs" />
+    <Compile Include="UIConfig.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Languages.wxl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets" />
+    <Folder Include="SourceFiles" />
+    <Folder Include="SourceFiles\data" />
+    <Folder Include="SourceFiles\images" />
+    <Folder Include="SourceFiles\interface" />
+    <Folder Include="SourceFiles\models" />
+    <Folder Include="SourceFiles\models\pytorch-gpt2-xl-aid2-v5" />
+    <Folder Include="SourceFiles\prompts" />
+    <Folder Include="SourceFiles\prompts\cloveranon-prompts" />
+    <Folder Include="SourceFiles\saves" />
+    <Folder Include="SourceFiles\story" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Anaconda3-2019.10-Windows-x86_64.exe" />
+    <Content Include="Assets\Background.bmp" />
+    <Content Include="Assets\Banner.bmp" />
+    <Content Include="Assets\LICENSE.rtf" />
+    <Content Include="SourceFiles\.gitignore" />
+    <Content Include="SourceFiles\changelog.txt" />
+    <Content Include="SourceFiles\config.ini" />
+    <Content Include="SourceFiles\convert_gpt2_model.py" />
+    <Content Include="SourceFiles\DATASETS.md" />
+    <Content Include="SourceFiles\data\build_training_data.py" />
+    <Content Include="SourceFiles\data\make_reddit_data.py" />
+    <Content Include="SourceFiles\data\mechturk.py" />
+    <Content Include="SourceFiles\data\scraper.py" />
+    <Content Include="SourceFiles\data\sheet_to_story.py" />
+    <Content Include="SourceFiles\data\text_adventures.txt" />
+    <Content Include="SourceFiles\data\upwork.csv" />
+    <Content Include="SourceFiles\download_model.sh" />
+    <Content Include="SourceFiles\getconfig.py" />
+    <Content Include="SourceFiles\gpt2generator.py" />
+    <Content Include="SourceFiles\icon.ico" />
+    <Content Include="SourceFiles\images\install-video-screenshot.png" />
+    <Content Include="SourceFiles\images\retro1.jpg" />
+    <Content Include="SourceFiles\images\retro2.jpg" />
+    <Content Include="SourceFiles\images\retro3.jpg" />
+    <Content Include="SourceFiles\install.sh" />
+    <Content Include="SourceFiles\interface.py" />
+    <Content Include="SourceFiles\interface\clover" />
+    <Content Include="SourceFiles\interface\instructions.txt" />
+    <Content Include="SourceFiles\interface\mainTitle.txt" />
+    <Content Include="SourceFiles\interface\prompt-instructions.txt" />
+    <Content Include="SourceFiles\interface\start-message.txt" />
+    <Content Include="SourceFiles\interface\subTitle.txt" />
+    <Content Include="SourceFiles\LICENSE" />
+    <Content Include="SourceFiles\model.torrent" />
+    <Content Include="SourceFiles\models\.gitkeep" />
+    <Content Include="SourceFiles\models\pytorch-gpt2-xl-aid2-v5\Everything from the torrent goes in here" />
+    <Content Include="SourceFiles\pastebin.py" />
+    <Content Include="SourceFiles\play.py" />
+    <Content Include="SourceFiles\prompts\cloveranon-prompts\GNU+Linux.txt" />
+    <Content Include="SourceFiles\prompts\cloveranon-prompts\kornilov.txt" />
+    <Content Include="SourceFiles\README.md" />
+    <Content Include="SourceFiles\requirements.txt" />
+    <Content Include="SourceFiles\saves\.gitkeep" />
+    <Content Include="SourceFiles\story\story_manager.py" />
+    <Content Include="SourceFiles\story\utils.py" />
+    <Content Include="SourceFiles\story\__init__.py" />
+    <Content Include="SourceFiles\test-models.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />
+  <Target Name="EnsureWixToolsetInstalled" Condition=" '$(WixTargetsImported)' != 'true' ">
+    <Error Text="The WiX Toolset v3.11 (or newer) build tools must be installed to build this project. To download the WiX Toolset, see http://wixtoolset.org/releases/" />
+  </Target>
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

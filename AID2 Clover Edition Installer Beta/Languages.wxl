@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+
+  <!--
+  English localization file
+  Responsible for defining all necessary strings to be shown to the user in English (1033)
+  -->
+  
+  <!-- Not planning on localized releases anytime soon, but setting up the support for it anyway down the line -->
+  <String Id="AppName_x64">AID2 Clover Edition Setup Wizard (64-bit)</String>
+  <String Id="AppName_x86">AID2 Clover Edition Setup Wizard (32-bit)</String>
+  <String Id="Language">1033</String>
+  <String Id="Developer">Cloveranon</String>
+  <String Id="GeneralDescription">Installs and configures a Pytorch-based version of AID2: Clover Edition.</String>
+  <String Id="DeveloperComments">This is a beta version and offers little in the way of advanced installer functionality. It is, however, an awful lot more convenient than following the instructions of a README.md on github.</String>
+  <String Id="DowngradeMessage">A newer version of AID2: Clover Edition is already installed.</String>
+  <String Id="GPUBoxText">Enable GPU acceleration support</String>
+  <String Id="PythonPackageBoxText">Enable color terminal support</String>
+  <String Id="TorrentBoxText">Enable torrent autodownload</String>
+  <String Id="GPUDescription">If enabled the Setup Wizard will configure CUDA in GPU mode and install cuDNN onto the Anaconda's Python 3.7 installation alongside prerequisites. Please note that 32-bit 1158M models will require upward of &gt;8GB of VRAM, and 16-bit models &gt;4GB of VRAM.</String>
+  <String Id="PythonPackageDescription">If enabled the Setup Wizard will install Colorama, a Python package designed to provide color tagging support to Command Prompt and PowerShell. Alternatively, Windows Terminal may be installed from the app store.</String>
+  <String Id="TorrentDescription">If enabled the Setup Wizard will attempt to dowload the torrent of the original AI Dungeon 2 1558M GPT-2 model converted into a 32-bit Pytorch version using the default Windows application for .torrent files.</String>
+  <String Id="DialogHeader">Advanced Options Configuration</String>
+  <String Id="DialogDescription">Please configure the advanced installation options</String>
+  <String Id="OptionsHeader">Advanced Options</String>
+  <String Id="BackButton">Back</String>
+  <String Id="NextButton">Next</String>
+  <String Id="CancelButton">Cancel</String>
+
+</WixLocalization>

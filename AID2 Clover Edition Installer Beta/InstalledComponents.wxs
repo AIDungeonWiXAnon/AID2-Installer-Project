@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <!--
+  Components installer file
+  Responsible for defining all files to be installed
+  -->
+
+  <!-- TODO: This is not maintainable if the project grows, look into a way of generating this file based on pulling from a github release page or something -->
+  <Fragment>
+    <ComponentGroup Id="RootFolderFiles" Directory="INSTALLFOLDER">
+      <Component Id="_.gitignore" Guid="{99FE6C41-D6E2-4233-A68E-E31FD2A60738}">
+        <File Id="_.gitignore" Source="$(var.ProjectDir)SourceFiles\.gitignore" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="changelog.txt" Guid="{14B1ACC7-6E29-46D2-8F0A-9EA1B32D1B18}">
+        <File Id="changelog.txt" Source="$(var.ProjectDir)SourceFiles\changelog.txt" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="config.ini" Guid="{74DB41D3-FA52-4E41-98E4-E770E65FF752}">
+        <File Id="config.ini" Source="$(var.ProjectDir)SourceFiles\config.ini" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="convert_gpt2_model.py" Guid="{868D302D-D2EF-471F-8C78-22AA8408137F}">
+        <File Id="convert_gpt2_model.py" Source="$(var.ProjectDir)SourceFiles\convert_gpt2_model.py" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="DATASETS.md" Guid="{66B55DE3-A463-4361-8388-1600519868D9}">
+        <File Id="DATASETS.md" Source="$(var.ProjectDir)SourceFiles\DATASETS.md" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="download_model.sh" Guid="{C0C4E5A5-0C08-4F0B-95E7-340DC683E5DC}">
+        <File Id="download_model.sh" Source="$(var.ProjectDir)SourceFiles\download_model.sh" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="getconfig.py" Guid="{FDD9D3C8-2FC5-4A99-AC2D-7979FD643D3A}">
+        <File Id="getconfig.py" Source="$(var.ProjectDir)SourceFiles\getconfig.py" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="gpt2generator.py" Guid="{D97CF2EB-E8F5-4ABA-87B4-FB0580C08B3C}">
+        <File Id="gpt2generator.py" Source="$(var.ProjectDir)SourceFiles\gpt2generator.py" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <!-- Currently dummy, see Product.wxs -->
+      <Component Id="icon.ico" Guid="{87E3AD0A-DB1D-4357-AD72-26301BB8F2D9}">
+        <File Id="icon.ico" Source="$(var.ProjectDir)SourceFiles\icon.ico" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="install.sh" Guid="{04B76E53-335B-402B-8D6C-1787B01940C1}">
+        <File Id="install.sh" Source="$(var.ProjectDir)SourceFiles\install.sh" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="interface.py" Guid="{66B83EDB-DB0A-418A-AD29-8FAF4ACF785A}">
+        <File Id="interface.py" Source="$(var.ProjectDir)SourceFiles\interface.py" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="LICENSE" Guid="{6D4551AA-47C8-4DC6-AF59-0A42369D834E}">
+        <File Id="LICENSE" Source="$(var.ProjectDir)SourceFiles\LICENSE" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="model.torrent" Guid="{623C1AF3-0C83-4154-B656-CDD80F194FE3}">
+        <File Id="model.torrent" Source="$(var.ProjectDir)SourceFiles\model.torrent" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="pastebin.py" Guid="{22237709-635D-4EA6-AFDF-5D5D490F1B2E}">
+        <File Id="pastebin.py" Source="$(var.ProjectDir)SourceFiles\pastebin.py" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="play.py" Guid="{06007CCF-5F6C-45D4-BD90-DAEBF07D60CE}">
+        <File Id="play.py" Source="$(var.ProjectDir)SourceFiles\play.py" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="README.md" Guid="{897010D7-8C75-4B74-8C19-10F41C8F908C}">
+        <File Id="README.md" Source="$(var.ProjectDir)SourceFiles\README.md" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="requirements.txt" Guid="{257842FD-B104-41AB-B944-F1C2DDDF4D4B}">
+        <File Id="requirements.txt" Source="$(var.ProjectDir)SourceFiles\requirements.txt" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="storymanager.py" Guid="{52B3588F-D043-4C27-A3A5-06E64C989352}">
+        <File Id="storymanager.py" Source="$(var.ProjectDir)SourceFiles\storymanager.py" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="test_models.py" Guid="{2B33D1B8-5CF2-4C43-9CDF-7DBCCE0FCF32}">
+        <File Id="test_models.py" Source="$(var.ProjectDir)SourceFiles\test-models.py" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="utils.py" Guid="{5309140C-0A32-4ACB-BCC2-278BB68E7127}">
+        <File Id="utils.py" Source="$(var.ProjectDir)SourceFiles\utils.py" KeyPath="yes" Checksum="yes" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="DataFiles" Directory="DataFolder">
+      <Component Id="build_training_data.py" Guid="{BA1B4386-CB19-42D2-B199-7274231DD2ED}">
+        <File Id="build_training_data.py" Source="$(var.ProjectDir)SourceFiles\data\build_training_data.py" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="make_reddit_data.py" Guid="{6EBFFC59-BF88-47F9-8A85-F035332708D7}">
+        <File Id="make_reddit_data.py" Source="$(var.ProjectDir)SourceFiles\data\make_reddit_data.py" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="mechturk.py" Guid="{B722F1B2-EAC1-4D1C-A855-D5EB861B1E53}">
+        <File Id="mechturk.py" Source="$(var.ProjectDir)SourceFiles\data\mechturk.py" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="scraper.py" Guid="{FECF1515-44F5-4462-ACEC-38976EC652CE}">
+        <File Id="scraper.py" Source="$(var.ProjectDir)SourceFiles\data\scraper.py" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="sheet_to_story.py" Guid="{28BE7E61-2ADA-4B6D-8757-9F8E7EC2177A}">
+        <File Id="sheet_to_story.py" Source="$(var.ProjectDir)SourceFiles\data\sheet_to_story.py" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="text_adventures.txt" Guid="{F9F2BB4E-4434-4E1A-A3D5-5AAF3E8379D5}">
+        <File Id="text_adventures.txt" Source="$(var.ProjectDir)SourceFiles\data\text_adventures.txt" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="upwork.csv" Guid="{A311E997-B7E3-4447-BE21-59037E0F6066}">
+        <File Id="upwork.csv" Source="$(var.ProjectDir)SourceFiles\data\upwork.csv" KeyPath="yes" Checksum="yes" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="ImagesFiles" Directory="ImagesFolder">
+      <Component Id="install_video_screenshot.png" Guid="{B3F32B71-28B4-4719-A296-26CF86479A0E}">
+        <File Id="install_video_screenshot.png" Source="$(var.ProjectDir)SourceFiles\images\install-video-screenshot.png" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="retro1.jpg" Guid="{B4CBE1D4-7A5F-4166-A44C-75CD50FAC142}">
+        <File Id="retro1.jpg" Source="$(var.ProjectDir)SourceFiles\images\retro1.jpg" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="retro2.jpg" Guid="{03A65DB9-5990-450B-9BC2-53A3887FEAB1}">
+        <File Id="retro2.jpg" Source="$(var.ProjectDir)SourceFiles\images\retro2.jpg" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="retro3.jpg" Guid="{2E57DFE7-4A6E-4979-BC1F-F357846CFB47}">
+        <File Id="retro3.jpg" Source="$(var.ProjectDir)SourceFiles\images\retro3.jpg" KeyPath="yes" Checksum="yes" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="InterfaceFiles" Directory="InterfaceFolder">
+      <Component Id="clover" Guid="{6B2933F9-1D70-4D79-846A-3C505C81A163}">
+        <File Id="clover" Source="$(var.ProjectDir)SourceFiles\interface\clover" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="instructions.txt" Guid="{FBFB75DA-7E9C-402A-929A-3227DBF024B9}">
+        <File Id="instructions.txt" Source="$(var.ProjectDir)SourceFiles\interface\instructions.txt" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="mainTitle.txt" Guid="{4708032A-0D61-4BC5-B7A6-C9A7C0AEF2A4}">
+        <File Id="mainTitle.txt" Source="$(var.ProjectDir)SourceFiles\interface\mainTitle.txt" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="prompt_instructions.txt" Guid="{DC9AAB68-EE32-4666-8B36-E07082B70F05}">
+        <File Id="prompt_instructions.txt" Source="$(var.ProjectDir)SourceFiles\interface\prompt-instructions.txt" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="start_message.txt" Guid="{EF4CCDC7-2488-4795-BD5E-773C1A93EAEA}">
+        <File Id="start_message.txt" Source="$(var.ProjectDir)SourceFiles\interface\start-message.txt" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="subTitle.txt" Guid="{070DB137-8F26-4E3E-AB1F-5D278C4FFC1A}">
+        <File Id="subTitle.txt" Source="$(var.ProjectDir)SourceFiles\interface\subTitle.txt" KeyPath="yes" Checksum="yes" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="ModelsFiles" Directory="ModelsFolder">
+      <Component Id="_.gitkeep" Guid="{00A7314A-65A6-4504-B30C-2B2E6DF36A6B}">
+        <File Id="_.gitkeep" Source="$(var.ProjectDir)SourceFiles\models\.gitkeep" KeyPath="yes" Checksum="yes" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="PytorchGPT2XLFiles" Directory="PytorchGPT2XLFolder">
+      <Component Id="TorrentInfoFile" Guid="{89898195-94C0-4A99-B51E-02E94B45FC1C}">
+        <File Id="TorrentInfoFile" Source="$(var.ProjectDir)SourceFiles\models\pytorch-gpt2-xl-aid2-v5\Everything from the torrent goes in here" KeyPath="yes" Checksum="yes" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CloveranonFiles" Directory="CloveranonFolder">
+      <Component Id="GNU_Linux.txt" Guid="{2255A0D0-DEF1-40B5-8AE2-881DD4B8C418}">
+        <File Id="GNU_Linux.txt" Source="$(var.ProjectDir)SourceFiles\prompts\cloveranon-prompts\GNU+Linux.txt" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="kornilov.txt" Guid="{B2DF5958-FD75-48EA-883B-05A4D5366B3D}">
+        <File Id="kornilov.txt" Source="$(var.ProjectDir)SourceFiles\prompts\cloveranon-prompts\kornilov.txt" KeyPath="yes" Checksum="yes" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="SavesFiles" Directory="SavesFolder">
+      <Component Id="_.gitkeep2" Guid="{1636D82E-46DD-4DE5-8E22-7956354B9E92}">
+        <File Id="_.gitkeep2" Source="$(var.ProjectDir)SourceFiles\saves\.gitkeep" KeyPath="yes" Checksum="yes" />
+      </Component>
+    </ComponentGroup>
+
+  </Fragment>
+
+</Wix>

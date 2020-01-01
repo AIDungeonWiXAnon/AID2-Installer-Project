@@ -1,0 +1,1 @@
+ATTENTION: Clover-Edition has just gone through some major updates. You will have to reinstall if you are still on the old version. Many things have been changed. Please read the README.md or https://github.com/cloveranon/Clover-Edition

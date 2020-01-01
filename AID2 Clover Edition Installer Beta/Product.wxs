@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  
+  <!--
+  Product installer file
+  Responsible for defining basline UI elements, all metadata, and authoring the installation process
+  -->
+  
+  <!-- TODO: Link these to ACTUAL assembly parameters -->
+  <?define AppGUID = {2E458144-C3FE-401F-8A1D-2E9BFDB98C15}?>
+  <?define BuildNumber = 0.0.0.0?> <!-- Beta version to remain as 0.0.0.0 unless otherwise directed -->
+  <?define UpgradeGUID = {55FF2554-AD33-4A21-8BB5-7FD4DA2DE2A8}?>
+  
+  <Product Id="$(var.AppGUID)"
+           Name="!(loc.AppName_$(var.Platform))"
+           Language="!(loc.Language)"
+           Version="$(var.BuildNumber)"
+           Manufacturer="!(loc.Developer)"
+           UpgradeCode="$(var.UpgradeGUID)">
+    
+    <Package InstallerVersion="200"
+             Compressed="yes"
+             InstallScope="perMachine"
+             Platform="$(var.Platform)"
+             Languages="!(loc.Language)"
+             Description="!(loc.GeneralDescription)"
+             Comments="!(loc.DeveloperComments)" />
+
+    <!-- TODO: Request Clover Edition include an icon.ico file -->
+    <Icon Id="AppIcon" SourceFile="$(var.ProjectDir)SourceFiles\icon.ico" />
+    <Property Id="ARPPRODUCTICON" Value="AppIcon" />
+    
+    <Property Id="APPURLINFOABOUT">https://github.com/cloveranon/Clover-Edition</Property>
+    
+    <MediaTemplate EmbedCab="yes"
+                   CompressionLevel="high" />
+
+    <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeMessage)" />
+
+    <UIRef Id="WixUI_Common" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" /> <!-- Enables WiX support for a custom install directory -->
+    <WixVariable Id="WixUIDialogBmp" Value="$(var.ProjectDir)Assets\Background.bmp" />
+    <WixVariable Id="WixUIBannerBmp" Value="$(var.ProjectDir)Assets\Banner.bmp" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)Assets\LICENSE.rtf" />
+    <UI Id="WixUI_InstallDir">
+      <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
+      <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />
+      <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+      <Property Id="WixUI_Mode" Value="InstallDir" />
+      <DialogRef Id="BrowseDlg" />
+      <DialogRef Id="DiskCostDlg" />
+      <DialogRef Id="ErrorDlg" />
+      <DialogRef Id="FatalError" />
+      <DialogRef Id="FilesInUse" />
+      <DialogRef Id="MsiRMFilesInUse" />
+      <DialogRef Id="PrepareDlg" />
+      <DialogRef Id="ProgressDlg" />
+      <DialogRef Id="ResumeDlg" />
+      <DialogRef Id="UserExit" />
+      <Publish Dialog="BrowseDlg" Control="OK" Event="DoAction" Value="WixUIValidatePath" Order="3">1</Publish>
+      <Publish Dialog="BrowseDlg" Control="OK" Event="SpawnDialog" Value="InvalidDirDlg" Order="4"><![CDATA[WIXUI_INSTALLDIR_VALID<>"1"]]></Publish>
+      <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="LicenseAgreementDlg">NOT Installed</Publish>
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg">Installed AND PATCH</Publish>
+      <Publish Dialog="LicenseAgreementDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg">1</Publish>
+      <Publish Dialog="LicenseAgreementDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg">LicenseAccepted = "1"</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="LicenseAgreementDlg">1</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Next" Event="SetTargetPath" Value="[WIXUI_INSTALLDIR]" Order="1">1</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Next" Event="DoAction" Value="WixUIValidatePath" Order="2">NOT WIXUI_DONTVALIDATEPATH</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Next" Event="SpawnDialog" Value="InvalidDirDlg" Order="3"><![CDATA[NOT WIXUI_DONTVALIDATEPATH AND WIXUI_INSTALLDIR_VALID<>"1"]]></Publish>
+      <Publish Dialog="InstallDirDlg" Control="Next" Event="NewDialog" Value="AdvancedFeaturesDlg" Order="4">WIXUI_DONTVALIDATEPATH OR WIXUI_INSTALLDIR_VALID="1"</Publish>
+      <Publish Dialog="InstallDirDlg" Control="ChangeFolder" Property="_BrowseProperty" Value="[WIXUI_INSTALLDIR]" Order="1">1</Publish>
+      <Publish Dialog="InstallDirDlg" Control="ChangeFolder" Event="SpawnDialog" Value="BrowseDlg" Order="2">1</Publish>
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="AdvancedFeaturesDlg" Order="1">NOT Installed</Publish>
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg" Order="2">Installed AND NOT PATCH</Publish>
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="2">Installed AND PATCH</Publish>
+      <Publish Dialog="MaintenanceWelcomeDlg" Control="Next" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="RepairButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="RemoveButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="Back" Event="NewDialog" Value="MaintenanceWelcomeDlg">1</Publish>
+      <Publish Dialog="AdvancedFeaturesDlg" Control="Back" Event="NewDialog" Value="InstallDirDlg">1</Publish>
+      <Publish Dialog="AdvancedFeaturesDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="AdvancedFeaturesDlg" Control="Cancel" Event="SpawnDialog" Value="CancelDlg" />
+      <Property Id="ARPNOMODIFY" Value="1" />
+    </UI>
+
+    <Feature Id="AppFilesAndFoldersToBeInstalled" Title="!(loc.AppName_$(var.Platform))" Level="1">
+      <ComponentGroupRef Id="RootFolderFiles" />
+      <ComponentGroupRef Id="DataFiles" />
+      <ComponentGroupRef Id="ImagesFiles" />
+      <ComponentGroupRef Id="InterfaceFiles" />
+      <ComponentGroupRef Id="ModelsFiles" />
+      <ComponentGroupRef Id="PytorchGPT2XLFiles" />
+      <ComponentGroupRef Id="CloveranonFiles" />
+      <ComponentGroupRef Id="SavesFiles" />
+    </Feature> 
+    
+    <!-- Not particularly proud of the nested ifelse statements, but After doesn't suport conditional ORs -->
+    <InstallExecuteSequence>
+      <Custom Action="GPU1_CUDASetup" Before="InstallFiles">
+        <![CDATA[GPUACCELERATION]]>
+      </Custom>
+      <Custom Action="GPU2_CUDASetup" After="GPU1_CUDASetup">
+        <![CDATA[GPUACCELERATION]]>
+      </Custom>
+      <Custom Action="CPU_CUDASetup" Before="InstallFiles">
+        <![CDATA[NOT GPUACCELERATION]]>
+      </Custom>
+      <Custom Action="Color_PythonPackageSetup" After="InstallFiles">
+        <![CDATA[COLORTERMINALSUPPORT]]>
+      </Custom>
+      <Custom Action="NoColor_PythonPackageSetup" After="InstallFiles">
+        <![CDATA[NOT COLORTERMINALSUPPORT]]>
+      </Custom>
+      <Custom Action="InstallTorrent" After="InstallFinalize">
+        <![CDATA[INSTALLTORRENT]]>
+      </Custom>
+    </InstallExecuteSequence>
+  </Product>
+  
+</Wix>

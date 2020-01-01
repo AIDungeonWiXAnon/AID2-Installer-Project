@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+  
+  <!--
+  English localization file
+  Responsible for defining all necessary strings to be shown to the user in English (1033)
+  -->
+
+  <!-- Not planning on localized releases anytime soon, but setting up the support for it anyway down the line -->
+  <String Id="AppName_x64">AID2 Pytorch Clover Edition (64-bit)</String>
+  <String Id="AppName_x86">AID2 Pytorch Clover Edition (32-bit)</String>
+  <String Id="Developer">Friendly /vp/oreon</String>
+  <String Id="ArchitectureMessage">This application is only supported on Windows 7, Windows Server 2008 R2, or higher.</String>
+  <String Id="AdminMessage">You need to be an administrator to install this product.</String>
+  
+</WixLocalization>
