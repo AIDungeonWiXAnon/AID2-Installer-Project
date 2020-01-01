@@ -1,12 +1,14 @@
-# AI Dungeon 2: Clover Edition Installer
+# AI Dungeon 2: Clover Edition Installer (.exe)
 
 This repo's main focus is providing an easy-to-use, intuitive, and comprehensive installer for AI Dungeon 2: Clover Edition. It will handle install of the Github repo, CUDA, cuDNN, Python, and all related packages, plus any configuration options that need to be made (such as downloading the torrent.)
+
 Currently the system is manually updated by me to whatever the latest release of Clover Edition is when I have the time, but in the future, it will be an automated web-based installer that will automatically pull the latest version for you.
+
 It does, however, currently automatically pull the latest versions of Python 3.7, CUDA, cuDNN, and their related packages (such as transformers).
 
 ## Getting Started
 
-These instructions will get you a copy of the project up so that you can fiddle around with it. If you'd rather just download an exe and install the game, see deployement for notes on that.
+These instructions will get you a copy of the project up so that you can fiddle around with it. If you'd rather just download an exe and install the game, see deployment for notes on that.
 
 ### Prerequisites
 
@@ -15,17 +17,17 @@ What things you need to install the software and how to install them:
 ```
 Visual Studio - Download the community edition and register it to an MS account.
 WiX v3 - Download the VS extension for your version of VS
-Git - To download
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+A step by step series of examples that tell you how to get a development env running:
 
 Install Visual Studio
 
 ```
-Launch the Visual Studio Installer and update Visual Studio Community to the latest version for that edition (2019 16.4.2 recommended)
+Launch the Visual Studio Installer
+Udate Visual Studio Community to the latest version for that edition (2019 16.4.2 recommended)
 ```
 
 Add the WiX extension
@@ -34,20 +36,20 @@ Add the WiX extension
 Just run the downloaded extension file and VS Installer should take care of the rest for you
 ```
 
-Import the .sln project
+And import the .sln project
 
 ```
 Download and extract this Github repo somewhere you'd like
 Select "Open a project" and select the .sln
 ```
 
-Congrats, that's it! From there you should be able to compile the project, at least just as soon as I get Git LFS working and can add the Anaconda exes needed for the bootstrapper.
+Congrats, that's it! From there you should be able to compile the project, at least just as soon as I get Git LFS working and can add the Anaconda exes needed for the bootstrapper.  
 See Bundle.wxs for filenames, if you'd like to download the Anaconda exes yourself in the meantime.
 
 ## Deployment
 
 In the future, I'll figure out how to use Releases on Github and you'll have a nice, fancy download button to click that'll give you the latest version of the installer. For now, though, you can get the installer here:
-* [64-bit .exe installer for Clover Edition c74ba69] (https://mega.nz/#!G5lTxIyD!DFb6LBiwtVzxCfOwEgTPyG0W8B-oRXWx-yxA_aKOjak)
+* [64-bit .exe installer for Clover Edition c74ba69](https://mega.nz/#!G5lTxIyD!DFb6LBiwtVzxCfOwEgTPyG0W8B-oRXWx-yxA_aKOjak)
 
 ## Built With
 
@@ -60,13 +62,13 @@ In the future, I'll figure out how to use Releases on Github and you'll have a n
 
 ## Contributing
 
-Feel free to submit issues, make forks, submit pull requests, and help out with whatever you like; I work on this in my increasingly sparse spare time and extra codemonkeys (especially if they know XML) are always appreciated.
+Feel free to submit issues, make forks, submit pull requests, and help out with whatever you like; I work on this in my increasingly sparse spare time and extra codemonkeys (especially if they know XML) are always appreciated.  
 Localization files (.xwl) would be especially nice for anons out there who don't speak the English. [See WiX documentation for how to make one of those.](https://wixtoolset.org/documentation/manual/v3/howtos/ui_and_localization/build_a_localized_version.html)
 
 ## Versioning
 
-Currently I'm leaving versioning at 0.0.0.0 until out of beta (probably once a web-based installer is finished, so that I don't have to maintain the versioning manually).
-GUIDs, however, will be editted for major differences in versions (addition or removal of major features) and upgrade code GUIDs will be changed per-branch (local-based and web-based, for instance).
+Currently I'm leaving versioning at 0.0.0.0 until out of beta (probably once a web-based installer is finished, so that I don't have to maintain the versioning manually).  
+GUIDs, however, will be edited for major differences in versions (addition or removal of major features) and upgrade code GUIDs will be changed per-branch (local-based and web-based, for instance).
 
 ## Authors
 
