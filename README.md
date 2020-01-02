@@ -55,7 +55,7 @@ In the near future, you'll be able to check the [releases tab for this repo](htt
 
 * [Visual Studio](https://visualstudio.microsoft.com/) - The IDE used for source code development
 * [WiX v3](https://wixtoolset.org/) - The toolset used to create the .exe bootstrapper and .msi installer
-* [Anaconda](https://www.anaconda.com/) - Used to download and install CUDA, cuDNN, Python, and related Python packages
+* [Miniconda](https://docs.conda.io/en/latest/miniconda.html) - Used to download and install CUDA, cuDNN, Python, and related Python packages
 * [CUDA](https://developer.nvidia.com/cuda-zone) - API used for giving the AI something useable to compute with
 * [cuDNN](https://developer.nvidia.com/cudnn) - Library used to improve GPU-based AI computation performance
 * [Python v3.7](https://www.python.org/) - Language used to tie all of the various systems of the AI together
