@@ -99,22 +99,22 @@
     
     <InstallExecuteSequence>
       <Custom Action="GPU1_CUDASetup" Before="InstallFiles">
-        <![CDATA[GPUACCELERATION]]>
+        <![CDATA[GPUACCELERATION]]> AND NOT Installed
       </Custom>
       <Custom Action="GPU2_CUDASetup" After="GPU1_CUDASetup">
-        <![CDATA[GPUACCELERATION]]>
+        <![CDATA[GPUACCELERATION]]> AND NOT Installed
       </Custom>
       <Custom Action="CPU_CUDASetup" Before="InstallFiles">
-        <![CDATA[NOT GPUACCELERATION]]>
+        <![CDATA[NOT GPUACCELERATION]]> AND NOT Installed
       </Custom>
       <Custom Action="Color_PythonPackageSetup" After="InstallFiles">
-        <![CDATA[COLORTERMINALSUPPORT]]>
+        <![CDATA[COLORTERMINALSUPPORT]]> AND NOT Installed
       </Custom>
       <Custom Action="NoColor_PythonPackageSetup" After="InstallFiles">
-        <![CDATA[NOT COLORTERMINALSUPPORT]]>
+        <![CDATA[NOT COLORTERMINALSUPPORT]]> AND NOT Installed
       </Custom>
       <Custom Action="InstallTorrent" After="InstallFinalize">
-        <![CDATA[INSTALLTORRENT]]>
+        <![CDATA[INSTALLTORRENT]]> AND NOT Installed
       </Custom>
     </InstallExecuteSequence>
   </Product>
