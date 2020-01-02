@@ -57,11 +57,6 @@
   <ItemGroup>
     <Folder Include="Assets" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Assets\AID2 Clover Edition Installer Beta.msi" />
-    <Content Include="Assets\Anaconda3-2019.10-Windows-x86.exe" />
-    <Content Include="Assets\Anaconda3-2019.10-Windows-x86_64.exe" />
-  </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />
   <Target Name="EnsureWixToolsetInstalled" Condition=" '$(WixTargetsImported)' != 'true' ">

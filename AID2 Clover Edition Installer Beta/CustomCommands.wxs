@@ -3,7 +3,7 @@
 
   <!--
   Custom commands file
-  Responsible for defining Anaconda, Python package, and torrent install commands
+  Responsible for defining conda, Python package, and torrent install commands
   -->
 
   <Fragment>
