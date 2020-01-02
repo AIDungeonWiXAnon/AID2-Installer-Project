@@ -12,5 +12,6 @@
   <String Id="Developer">Friendly /vp/oreon</String>
   <String Id="ArchitectureMessage">This application is only supported on Windows 7, Windows Server 2008 R2, or higher.</String>
   <String Id="AdminMessage">You need to be an administrator to install this product.</String>
+  <String Id="LangaugeDirectory">en-us</String>
   
 </WixLocalization>

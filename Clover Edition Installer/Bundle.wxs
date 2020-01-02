@@ -59,8 +59,6 @@
     
     
 		<Chain>
-      
-      <!-- TODO: Get Git LFS working so these can be included for compile purposes -->
       <?if $(var.Platform)=x64 ?>
       <ExePackage Id="Anaconda3" SourceFile="$(var.ProjectDir)Assets\Anaconda3-2019.10-Windows-x86_64.exe" Compressed="yes" PerMachine="yes" InstallCondition="NOT AnacondaFoundx64" />
       <?else?>
@@ -70,9 +68,9 @@
       <RollbackBoundary Id="PostAnaconda3" />
 
       <?if $(var.Platform)=x64 ?>
-      <MsiPackage Id="AID2CloverEdition" SourceFile="$(var.ProjectDir)Assets\AID2-Clover-Edition-Installer-Beta-x86_64.msi" Compressed="yes" Vital="yes" DisplayInternalUI="yes" />
+      <MsiPackage Id="AID2CloverEdition" SourceFile="$(var.AID2 Clover Edition Installer Beat.ProjectDir)bin\x64\Release\!(loc.LangaugeDirectory)\AID2-Clover-Edition-Installer-Beta" Compressed="yes" Vital="yes" DisplayInternalUI="yes" />
       <?else?>
-      <MsiPackage Id="AID2CloverEdition" SourceFile="$(var.ProjectDir)Assets\AID2-Clover-Edition-Installer-Beta-x86.msi" Compressed="yes" Vital="yes" DisplayInternalUI="yes" />
+      <MsiPackage Id="AID2CloverEdition" SourceFile="$(var.AID2 Clover Edition Installer Beat.ProjectDir)bin\Release\!(loc.LangaugeDirectory)\AID2-Clover-Edition-Installer-Beta" Compressed="yes" Vital="yes" DisplayInternalUI="yes" />
       <?endif?>  
 		</Chain>
 	</Bundle>
