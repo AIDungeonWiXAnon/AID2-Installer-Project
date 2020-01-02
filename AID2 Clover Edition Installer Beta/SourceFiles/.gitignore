@@ -10,3 +10,4 @@ story*.json
 /models/*
 !/models/.gitkeep
 .vscode/
+.idea/

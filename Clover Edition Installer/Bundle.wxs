@@ -7,7 +7,7 @@
   <!--
   WiX-based EXE bootstrap Installer for AI Dungeon 2: Clover Edition (using Pytorch)
   Developed by: Friendly /vp/oreon
-  Last clone from GitHub: c74ba69 {2E458144-C3FE-401F-8A1D-2E9BFDB98C15}
+  Last clone from GitHub: 6df09f9 {B5AB9D6A-67C7-447C-BD0B-A618CCC75588}
   Installs the Clover Edition of AI Dungeon 2 into a given directory and autoinstalls all prerequisites, including Miniconda (Python 3.7) and related packages on Windows 7+ systems.
   Additionally includes support for GPU/CPU-based CUDA installations, accountless cuDNN install, automatic torrent download, and optional color in terminals.
   -->

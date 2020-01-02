@@ -45,7 +45,7 @@ Video walkthrough of Windows install:
 
 To play with GPU acceleration, you need an NVIDA GPU with CUDA installed (and possibly cuDNN, read ahead). The original "XL" 1558M parameter model requires at least 4GB of VRAM. Smaller models may consume much less. On CPU response times vary from 30 to 90 seconds on the XL 1558M model, which is slow but usable.
 
-We would love to have an easy to use Windows Installer, but we don't know how to make one. In the meantime you can manually install pretty easily:
+We have a windows installer which you can find [here](https://github.com/AIDungeonpastes/Clover-Edition-Installer/) or you can manually install by following the instructions below: 
 
 I should mention a program called [Anaconda](https://docs.anaconda.com/anaconda/install/) that claims to make it easy to install most of this stuff with a few commands in the terminal (although it already is easy to install most this stuff.) Including installing CUDA and cuDNN. Literally no one has tested this yet or created a guide for it. Report if it works. Otherwise:
 
@@ -153,3 +153,5 @@ Otherwise see:
 #### Contributing
 ------------------------
 Contributions are more than welcome. You can fork the thing and send a  [pull request](https://help.github.com/articles/using-pull-requests/) from your fork. Or you can possibly just edit the files from the github page if it lets you. If not fork the thing and try to edit your fork and submit it back.
+
+![cry.](https://i.4cdn.org/vg/1577854915134.png)

@@ -4,14 +4,15 @@ import itertools
 import torch
 import torch.nn.functional as F
 import re
-
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
-
 from getconfig import settings, logger
 from utils import cut_trailing_sentence
 
+if not settings.getboolean('force-cpu') and not torch.cuda.is_available():
+    logger.warning('CUDA is not available, you are limited to CPU only.')
+
 DTYPE = torch.float32 if  ((not torch.cuda.is_available()) or settings.getboolean('force-cpu')) else torch.float16
-logger.info('Cuda Available: {}    Force CPU: {}    DTYPE: {}'.format(torch.cuda.is_available(), settings.getboolean('force-cpu'), DTYPE))
+logger.info('Cuda Available: {}    Force CPU: {}    Precision: {}'.format(torch.cuda.is_available(), settings.getboolean('force-cpu'), '32-bit' if DTYPE==torch.float32 else '16-bit'))
 
 # warnings.filterwarnings("ignore")
 MODEL_CLASSES = {

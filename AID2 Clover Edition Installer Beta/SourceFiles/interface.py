@@ -17,6 +17,8 @@ def instructions():
 	print('  "/retry"             Retries the last action')
 	print('  "/restart"           Restarts the current story')
 	print('  "/print"             Prints a transcript of your adventure (without extra newline formatting)')
+	print('  "/alter"             Edit the last prompt from the AI')
+	print('  "/prompt"            Edit the story\'s permanent prompt paragraph')
 	print('  "/help"              Prints these instructions again')
 	print('  "/set SETTING VALUE" Sets the specified setting to the specified value.:')
 	print('      temp            Higher values make the AI more random. Default: 0.4 | Current:',settings.getfloat("temp"))

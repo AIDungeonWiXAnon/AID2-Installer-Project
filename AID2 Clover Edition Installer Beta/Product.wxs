@@ -7,7 +7,7 @@
   -->
   
   <!-- TODO: Link these to ACTUAL assembly parameters -->
-  <?define AppGUID = {2E458144-C3FE-401F-8A1D-2E9BFDB98C15}?>
+  <?define AppGUID = {B5AB9D6A-67C7-447C-BD0B-A618CCC75588}?>
   <?define BuildNumber = 0.0.0.0?> <!-- Beta version to remain as 0.0.0.0 unless otherwise directed -->
   <?define UpgradeGUID = {55FF2554-AD33-4A21-8BB5-7FD4DA2DE2A8}?>
   
