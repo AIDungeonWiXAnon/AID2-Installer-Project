@@ -49,7 +49,7 @@ If you run into any issues, it's likely references being in new locations: make 
 ## Deployment
 
 In the near future, you'll be able to check the [releases tab for this repo](https://github.com/AIDungeonWiXAnon/AID2-Installer-Project/releases) and you'll have a nice, fancy download button to click that'll give you the latest version of the installer. For now, though, you can get the installer here:
-* [64-bit .exe installer for Clover Edition c74ba69](https://mega.nz/#!G5lTxIyD!DFb6LBiwtVzxCfOwEgTPyG0W8B-oRXWx-yxA_aKOjak)
+* [64-bit .exe installer for Clover Edition 6df09f9](https://mega.nz/#!z9MH1KCS!Cp1vlbBdvLDqFW23zho3-YM7e7jLAlZpf8xIyrq9EAc)
 
 ## Built With
 
