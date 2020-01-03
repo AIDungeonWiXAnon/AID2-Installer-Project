@@ -38,7 +38,7 @@
       Privileged
     </bal:Condition>
 
-    <!-- TODO: Make the serach some sort of wildcard, since Anaconda includes the version number in the key name -->
+    <!-- TODO: Make the serach some sort of wildcard, since Miniconda includes the version number in the key name -->
     <?if $(var.Platform)=x64 ?>
     <util:RegistrySearch
           Id="CheckForMinicondaInstallation64"

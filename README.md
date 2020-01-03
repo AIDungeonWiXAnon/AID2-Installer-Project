@@ -1,8 +1,8 @@
 # AI Dungeon 2: Clover Edition Installer (.exe)
 
-This repo's main focus is providing an easy-to-use, intuitive, and comprehensive installer for AI Dungeon 2: Clover Edition. It will handle install of the Github repo, CUDA, cuDNN, Python, and all related packages, plus any configuration options that need to be made (such as downloading the torrent.)
+This repo's main focus is providing an easy-to-use, intuitive, and comprehensive installer for [AI Dungeon 2: Clover Edition](https://github.com/cloveranon/Clover-Edition). It will handle install of the Github repo, CUDA, cuDNN, Python, and all related packages, plus any configuration options that need to be made (such as downloading the torrent.)
 
-Currently the system is manually updated by me to whatever the latest release of Clover Edition is when I have the time, but in the future, it will be an automated web-based installer that will automatically pull the latest version for you.
+Currently the system is manually updated by me to whatever the latest release of Clover Edition is when I have the time. Thus, it's recommended that you use the web-based version if you want the absolutely latest release.
 
 It does, however, currently automatically pull the latest versions of Python 3.7, CUDA, cuDNN, and their related packages (such as transformers).
 
@@ -48,7 +48,7 @@ If you run into any issues, it's likely references being in new locations: make 
 
 ## Deployment
 
-In the near future, you'll be able to check the [releases tab for this repo](https://github.com/AIDungeonWiXAnon/AID2-Installer-Project/releases) and you'll have a nice, fancy download button to click that'll give you the latest version of the installer. For now, though, you can get the installer here:
+If you're looking for the most up to date version of Clover Edition, please see the [releases tab for this repo](https://github.com/AIDungeonWiXAnon/AID2-Installer-Project/releases) and you'll have a nice, fancy download button to click that'll give you the latest version of the installer. If you're looking for this version though, you can get the installer here:
 * [64-bit .exe installer for Clover Edition 6df09f9](https://mega.nz/#!z9MH1KCS!Cp1vlbBdvLDqFW23zho3-YM7e7jLAlZpf8xIyrq9EAc)
 
 ## Built With
