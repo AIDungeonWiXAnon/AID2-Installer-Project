@@ -8,14 +8,9 @@
 
   <!-- TARGETDIR and ProgramFilesFolder will almost always resolve to C:\Program Files -->
   <Fragment>
-    <?if $(var.Platform)=x64 ?>
-    <?define PlatformProgramFilesFolder = "ProgramFiles64Folder"?>
-    <?else?>
-    <?define PlatformProgramFilesFolder = "ProgramFilesFolder"?>
-    <?endif?>
     
     <Directory Id="TARGETDIR" Name="SourceDir">
-      <Directory Id="$(var.PlatformProgramFilesFolder)">
+      <Directory Id="ProgramFiles64Folder">
         <Directory Id="INSTALLDIR">
           <Directory Id="INSTALLFOLDER" Name="AID2 Clover Edition">
             <Directory Id="ModelsFolder" Name="models">

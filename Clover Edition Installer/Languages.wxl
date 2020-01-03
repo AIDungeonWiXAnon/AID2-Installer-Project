@@ -7,10 +7,10 @@
   -->
 
   <!-- Not planning on localized releases anytime soon, but setting up the support for it anyway down the line -->
-  <String Id="AppName_x64">AID2 Pytorch Clover Edition (64-bit)</String>
-  <String Id="AppName_x86">AID2 Pytorch Clover Edition (32-bit)</String>
+  <String Id="AppName">AID2 Pytorch Clover Edition</String>
   <String Id="Developer">Friendly /vp/oreon</String>
-  <String Id="ArchitectureMessage">This application is only supported on Windows 7, Windows Server 2008 R2, or higher.</String>
+  <String Id="BuildMessage">This application is only supported on Windows 7, Windows Server 2008 R2, or higher.</String>
+  <String Id="ArchitectureMessage">This application is only support on 64-bit installations of Windows.</String>
   <String Id="AdminMessage">You need to be an administrator to install this product.</String>
   <String Id="LangaugeDirectory">en-us</String>
   
