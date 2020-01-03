@@ -1,3 +1,0 @@
-torch
-pyjarowinkler
-transformers==2.3.0

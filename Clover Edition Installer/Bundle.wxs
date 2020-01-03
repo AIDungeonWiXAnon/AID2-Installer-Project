@@ -7,13 +7,12 @@
   <!--
   WiX-based EXE bootstrap Installer for AI Dungeon 2: Clover Edition (using Pytorch)
   Developed by: Friendly /vp/oreon
-  Last clone from GitHub: 6df09f9 {B5AB9D6A-67C7-447C-BD0B-A618CCC75588}
-  Installs the Clover Edition of AI Dungeon 2 into a given directory and autoinstalls all prerequisites, including Miniconda (Python 3.7) and related packages on Windows 7+ systems.
+  Installs the latest version of Clover Edition of AI Dungeon 2 into a given directory and autoinstalls all prerequisites, including Miniconda (Python 3.7) and related packages on Windows 7+ systems.
   Additionally includes support for GPU/CPU-based CUDA installations, accountless cuDNN install, automatic torrent download, and optional color in terminals.
   -->
   
-  <?define BuildNumber = 0.0.0.0?> <!-- Beta version to remain as 0.0.0.0 unless otherwise directed -->
-  <?define UpgradeGUID = {62718F90-28CF-4B4C-B0A0-7B3598AD4456}?>
+  <?define BuildNumber = 1.0.0.0?>
+  <?define UpgradeGUID = {EA66A954-56AF-47DD-B4E1-E4F365CD2694}?>
   
   <Bundle Name="!(loc.AppName_$(var.Platform))"
           Version="$(var.BuildNumber)"
@@ -38,7 +37,7 @@
       Privileged
     </bal:Condition>
 
-    <!-- TODO: Make the serach some sort of wildcard, since Anaconda includes the version number in the key name -->
+    <!-- TODO: Make the serach some sort of wildcard, since Miniconda includes the version number in the key name -->
     <?if $(var.Platform)=x64 ?>
     <util:RegistrySearch
           Id="CheckForMinicondaInstallation64"

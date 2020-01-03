@@ -7,9 +7,9 @@
   -->
   
   <!-- TODO: Link these to ACTUAL assembly parameters -->
-  <?define AppGUID = {B5AB9D6A-67C7-447C-BD0B-A618CCC75588}?>
-  <?define BuildNumber = 0.0.0.0?> <!-- Beta version to remain as 0.0.0.0 unless otherwise directed -->
-  <?define UpgradeGUID = {55FF2554-AD33-4A21-8BB5-7FD4DA2DE2A8}?>
+  <?define AppGUID = {18DEE5C2-9D0C-43EB-936A-A8213D2A2CBE}?>
+  <?define BuildNumber = 1.0?>
+  <?define UpgradeGUID = {DBEBB261-6A40-4B5E-8410-4F26406C3EB2}?>
   
   <Product Id="$(var.AppGUID)"
            Name="!(loc.AppName_$(var.Platform))"
@@ -86,25 +86,26 @@
       <Property Id="ARPNOMODIFY" Value="1" />
     </UI>
 
-    <Feature Id="AppFilesAndFoldersToBeInstalled" Title="!(loc.AppName_$(var.Platform))" Level="1">
+    <Feature Id="AppFilesAndFoldersToBeInstalled" Title="!(loc.AppName_$(var.Platform))" Level="1" Absent="disallow" AllowAdvertise="no">
       <ComponentGroupRef Id="RootFolderFiles" />
-      <ComponentGroupRef Id="DataFiles" />
-      <ComponentGroupRef Id="ImagesFiles" />
-      <ComponentGroupRef Id="InterfaceFiles" />
-      <ComponentGroupRef Id="ModelsFiles" />
       <ComponentGroupRef Id="PytorchGPT2XLFiles" />
-      <ComponentGroupRef Id="CloveranonFiles" />
-      <ComponentGroupRef Id="SavesFiles" />
+      <ComponentRef Id="CleanUpInstallDirectory" />
     </Feature> 
     
     <InstallExecuteSequence>
-      <Custom Action="GPU1_CUDASetup" Before="InstallFiles">
+      <Custom Action="GITSetup" Before="InstallFiles">
+        NOT Installed
+      </Custom>
+      <Custom Action="RepoInstall" After="GITSetup">
+        NOT Installed
+      </Custom>
+      <Custom Action="GPU1_CUDASetup" After="RepoInstall">
         <![CDATA[GPUACCELERATION]]> AND NOT Installed
       </Custom>
       <Custom Action="GPU2_CUDASetup" After="GPU1_CUDASetup">
         <![CDATA[GPUACCELERATION]]> AND NOT Installed
       </Custom>
-      <Custom Action="CPU_CUDASetup" Before="InstallFiles">
+      <Custom Action="CPU_CUDASetup" After="RepoInstall">
         <![CDATA[NOT GPUACCELERATION]]> AND NOT Installed
       </Custom>
       <Custom Action="Color_PythonPackageSetup" After="InstallFiles">

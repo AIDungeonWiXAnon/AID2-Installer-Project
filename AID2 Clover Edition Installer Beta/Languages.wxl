@@ -12,7 +12,7 @@
   <String Id="Language">1033</String>
   <String Id="Developer">Cloveranon</String>
   <String Id="GeneralDescription">Installs and configures a Pytorch-based version of AID2: Clover Edition.</String>
-  <String Id="DeveloperComments">This is a beta version and offers little in the way of advanced installer functionality. It is, however, an awful lot more convenient than following the instructions of a README.md on GitHub.</String>
+  <String Id="DeveloperComments">Requires an internet connection for all of the web installs.</String>
   <String Id="DowngradeMessage">A newer version of AID2: Clover Edition is already installed.</String>
   <String Id="GPUBoxText">Enable GPU acceleration support</String>
   <String Id="PythonPackageBoxText">Enable color terminal support</String>

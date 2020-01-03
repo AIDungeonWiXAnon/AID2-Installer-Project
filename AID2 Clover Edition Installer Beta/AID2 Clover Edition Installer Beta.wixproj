@@ -33,6 +33,7 @@
     <Compile Include="InstalledComponents.wxs" />
     <Compile Include="Product.wxs" />
     <Compile Include="UIConfig.wxs" />
+    <Compile Include="Uninstall.wxs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Languages.wxl" />

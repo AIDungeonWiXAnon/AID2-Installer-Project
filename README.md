@@ -1,10 +1,8 @@
 # AI Dungeon 2: Clover Edition Installer (.exe)
 
-This repo's main focus is providing an easy-to-use, intuitive, and comprehensive installer for AI Dungeon 2: Clover Edition. It will handle install of the Github repo, CUDA, cuDNN, Python, and all related packages, plus any configuration options that need to be made (such as downloading the torrent.)
+This repo's main focus is providing an easy-to-use, intuitive, and comprehensive installer for [AI Dungeon 2: Clover Edition](https://github.com/cloveranon/Clover-Edition). It will handle install of the Github repo, CUDA, cuDNN, Python, and all related packages, plus any configuration options that need to be made (such as downloading the torrent.)
 
-Currently the system is manually updated by me to whatever the latest release of Clover Edition is when I have the time, but in the future, it will be an automated web-based installer that will automatically pull the latest version for you.
-
-It does, however, currently automatically pull the latest versions of Python 3.7, CUDA, cuDNN, and their related packages (such as transformers).
+Currently the system is a web-based installer that will pull the latest versions of Clover Edition, Git, Python 3.7, CUDA, cuDNN, and their related packages (such as transformers).
 
 ## Getting Started
 
@@ -48,12 +46,12 @@ If you run into any issues, it's likely references being in new locations: make 
 
 ## Deployment
 
-In the near future, you'll be able to check the [releases tab for this repo](https://github.com/AIDungeonWiXAnon/AID2-Installer-Project/releases) and you'll have a nice, fancy download button to click that'll give you the latest version of the installer. For now, though, you can get the installer here:
-* [64-bit .exe installer for Clover Edition 6df09f9](https://mega.nz/#!z9MH1KCS!Cp1vlbBdvLDqFW23zho3-YM7e7jLAlZpf8xIyrq9EAc)
+Check the [releases tab for this repo](https://github.com/AIDungeonWiXAnon/AID2-Installer-Project/releases) for a nice, fancy download button to click that'll give you the latest version of the installer!
 
 ## Built With
 
 * [Visual Studio](https://visualstudio.microsoft.com/) - The IDE used for source code development
+* [Git](https://git-scm.com/) - The version control software used for pulling the latest version of Clover Edition
 * [WiX v3](https://wixtoolset.org/) - The toolset used to create the .exe bootstrapper and .msi installer
 * [Miniconda](https://docs.conda.io/en/latest/miniconda.html) - Used to download and install CUDA, cuDNN, Python, and related Python packages
 * [CUDA](https://developer.nvidia.com/cuda-zone) - API used for giving the AI something useable to compute with
@@ -67,8 +65,8 @@ Localization files (.xwl) would be especially nice for anons out there who don't
 
 ## Versioning
 
-Currently I'm leaving versioning at 0.0.0.0 until out of beta (probably once a web-based installer is finished, so that I don't have to maintain the versioning manually).  
-The application GUID, however, will be edited for each version (every commit will get a generated GUID) and upgrade code GUIDs will be changed per-branch (local-based and web-based, for instance) for the installer/bootstrapper themselves.
+Currently versions are based on an X.Y versioning, where X is the major release version and Y is the patch for that version.
+Additionally, the application GUID is edited for each major version of the installer and upgrade code GUIDs will be changed per-branch (local-based and web-based, for instance) for the installer/bootstrapper themselves.
 
 ## Authors
 

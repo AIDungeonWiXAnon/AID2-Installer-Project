@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <!--
+  Uninstall file
+  Responsible for handling deletion of the INSTALLFOLDER (\AID2 Clover Edition) folder, its files, all subdirectories, and their files.
+  -->
+  
+  <Fragment>
+    <Property Id="INSTALLFOLDER">
+      <RegistrySearch Key="SOFTWARE\!(loc.Developer)\!(loc.AppName_$(var.Platform))" Root="HKLM" Type="raw" Id="INSTALLFOLDER_REGENTRY" Name="Path" />
+    </Property>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CleanUpInstallDirectory" Guid="*">
+        <RegistryValue Root="HKLM" Key="SOFTWARE\!(loc.Developer)\!(loc.AppName_$(var.Platform))" Name="Path" Type="string" Value="[INSTALLFOLDER]" KeyPath="yes" />
+        <util:RemoveFolderEx On="uninstall" Property="INSTALLFOLDER" />
+      </Component>
+    </DirectoryRef>
+	</Fragment>
+  
+</Wix>
