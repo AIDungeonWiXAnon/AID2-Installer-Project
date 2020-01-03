@@ -8,7 +8,7 @@ It does, however, currently automatically pull the latest versions of Python 3.7
 
 ## Getting Started
 
-These instructions will get you a copy of the project up so that you can fiddle around with it. If you'd rather just download an exe and install the game, [see deployment](https://github.com/AIDungeonWiXAnon/AID2-Installer-Project#deployment) for notes on that.
+These instructions will get you a copy of the project up so that you can fiddle around with it. If you'd rather just download an exe and install the game, [see deployment](https://github.com/AIDungeonWiXAnon/AID2-Installer-Project/tree/local-installer-legacy#deployment) for notes on that.
 
 ### Prerequisites
 
