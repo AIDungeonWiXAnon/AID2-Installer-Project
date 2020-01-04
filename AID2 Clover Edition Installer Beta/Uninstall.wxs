@@ -9,12 +9,12 @@
   
   <Fragment>
     <Property Id="INSTALLFOLDER">
-      <RegistrySearch Key="SOFTWARE\!(loc.Developer)\!(loc.AppName_$(var.Platform))" Root="HKLM" Type="raw" Id="INSTALLFOLDER_REGENTRY" Name="Path" />
+      <RegistrySearch Key="SOFTWARE\!(loc.Developer)\!(loc.AppName)" Root="HKLM" Type="raw" Id="INSTALLFOLDER_REGENTRY" Name="Path" />
     </Property>
 
     <DirectoryRef Id="INSTALLFOLDER">
       <Component Id="CleanUpInstallDirectory" Guid="*">
-        <RegistryValue Root="HKLM" Key="SOFTWARE\!(loc.Developer)\!(loc.AppName_$(var.Platform))" Name="Path" Type="string" Value="[INSTALLFOLDER]" KeyPath="yes" />
+        <RegistryValue Root="HKLM" Key="SOFTWARE\!(loc.Developer)\!(loc.AppName)" Name="Path" Type="string" Value="[INSTALLFOLDER]" KeyPath="yes" />
         <util:RemoveFolderEx On="uninstall" Property="INSTALLFOLDER" />
       </Component>
     </DirectoryRef>

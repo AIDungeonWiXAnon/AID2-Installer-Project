@@ -5,16 +5,16 @@
      xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
 
   <!--
-  WiX-based EXE bootstrap Installer for AI Dungeon 2: Clover Edition (using Pytorch)
+  WiX-based EXE bootstrap Installer for AI Dungeon 2: Clover Edition (using PyTorch)
   Developed by: Friendly /vp/oreon
   Installs the latest version of Clover Edition of AI Dungeon 2 into a given directory and autoinstalls all prerequisites, including Miniconda (Python 3.7) and related packages on Windows 7+ systems.
   Additionally includes support for GPU/CPU-based CUDA installations, accountless cuDNN install, automatic torrent download, and optional color in terminals.
   -->
   
-  <?define BuildNumber = 1.0.0.0?>
+  <?define BuildNumber = 1.1?>
   <?define UpgradeGUID = {EA66A954-56AF-47DD-B4E1-E4F365CD2694}?>
   
-  <Bundle Name="!(loc.AppName_$(var.Platform))"
+  <Bundle Name="!(loc.AppName)"
           Version="$(var.BuildNumber)"
           Manufacturer="!(loc.Developer)"
           UpgradeCode="$(var.UpgradeGUID)"
@@ -25,12 +25,17 @@
       <bal:WixStandardBootstrapperApplication
         LicenseFile="$(var.ProjectDir)Assets\README.rtf"
         SuppressOptionsUI="yes"
+        SuppressRepair="yes"
         LogoFile="$(var.ProjectDir)Assets\icon.png" />
     </BootstrapperApplicationRef>
     
     <!-- NT version 6.1 is at least Windows 7/Windows Server 2008 R2 -->
-    <bal:Condition Message="!(loc.ArchitectureMessage)">
+    <bal:Condition Message="!(loc.BuildMessage)">
       <![CDATA[VersionNT >= v6.1]]>
+    </bal:Condition>
+
+    <bal:Condition Message="!(loc.ArchitectureMessage)">
+      <![CDATA[VersionNT64]]>
     </bal:Condition>
     
     <bal:Condition Message="!(loc.AdminMessage)">
@@ -38,7 +43,6 @@
     </bal:Condition>
 
     <!-- TODO: Make the serach some sort of wildcard, since Miniconda includes the version number in the key name -->
-    <?if $(var.Platform)=x64 ?>
     <util:RegistrySearch
           Id="CheckForMinicondaInstallation64"
           Variable="MinicondaFoundx64"
@@ -46,31 +50,14 @@
           Win64="yes"
           Root="HKLM"
           Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Miniconda3 4.7.12 (Python 3.7.4 64-bit)"/>
-    <?else?>
-    <util:RegistrySearch
-      Id="CheckForMinicondaInstallation86"
-      Variable="MinicondaFoundx86"
-      Result="exists"
-      Win64="no"
-      Root="HKLM"
-      Key="SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Miniconda3 4.7.12 (Python 3.7.4 32-bit)"/>
-    <?endif?>
     
     
 		<Chain>
-      <?if $(var.Platform)=x64 ?>
       <ExePackage Id="Miniconda3" SourceFile="$(var.ProjectDir)Assets\Miniconda3-latest-Windows-x86_64.exe" Compressed="yes" PerMachine="yes" InstallCondition="NOT MinicondaFoundx64" InstallCommand="/InstallationType=AllUsers /AddToPath=1 RegisterPython=1 /S /D=[ProgramFiles64Folder]Miniconda3" />
-      <?else?>
-      <ExePackage Id="Miniconda3" SourceFile="$(var.ProjectDir)Assets\Miniconda3-latest-Windows-x86.exe" Compressed="yes" PerMachine="yes" InstallCondition="NOT MinicondaFoundx86" InstallCommand="/InstallationType=AllUsers /AddToPath=1 RegisterPython=1 /S /D=[ProgramFilesFolder]Miniconda3" />
-      <?endif?>
 
       <RollbackBoundary Id="PostMiniconda3" />
 
-      <?if $(var.Platform)=x64 ?>
       <MsiPackage Id="AID2CloverEdition" SourceFile="$(var.AID2 Clover Edition Installer Beta.ProjectDir)bin\x64\Release\!(loc.LangaugeDirectory)\AID2-Clover-Edition-Installer-Beta.msi" Compressed="yes" Vital="yes" DisplayInternalUI="yes" />
-      <?else?>
-      <MsiPackage Id="AID2CloverEdition" SourceFile="$(var.AID2 Clover Edition Installer Beta.ProjectDir)bin\Release\!(loc.LangaugeDirectory)\AID2-Clover-Edition-Installer-Beta.msi" Compressed="yes" Vital="yes" DisplayInternalUI="yes" />
-      <?endif?>  
 		</Chain>
 	</Bundle>
 </Wix>

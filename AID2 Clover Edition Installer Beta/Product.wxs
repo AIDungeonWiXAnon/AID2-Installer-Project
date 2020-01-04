@@ -7,22 +7,21 @@
   -->
   
   <!-- TODO: Link these to ACTUAL assembly parameters -->
-  <?define AppGUID = {18DEE5C2-9D0C-43EB-936A-A8213D2A2CBE}?>
-  <?define BuildNumber = 1.0?>
+  <?define AppGUID = {7859AC22-C84D-48BB-BC07-D0DE590749C5}?>
+  <?define BuildNumber = 1.1?>
   <?define UpgradeGUID = {DBEBB261-6A40-4B5E-8410-4F26406C3EB2}?>
   
   <Product Id="$(var.AppGUID)"
-           Name="!(loc.AppName_$(var.Platform))"
+           Name="!(loc.AppName)"
            Language="!(loc.Language)"
            Version="$(var.BuildNumber)"
            Manufacturer="!(loc.Developer)"
            UpgradeCode="$(var.UpgradeGUID)">
     
-    <!-- Warning here can be safely ignored, IntelliSense doesn't understand the $() reference to a variable -->
     <Package InstallerVersion="200"
              Compressed="yes"
              InstallScope="perMachine"
-             Platform="$(var.Platform)"
+             Platform="x64"
              Languages="!(loc.Language)"
              Description="!(loc.GeneralDescription)"
              Comments="!(loc.DeveloperComments)" />
@@ -86,7 +85,7 @@
       <Property Id="ARPNOMODIFY" Value="1" />
     </UI>
 
-    <Feature Id="AppFilesAndFoldersToBeInstalled" Title="!(loc.AppName_$(var.Platform))" Level="1" Absent="disallow" AllowAdvertise="no">
+    <Feature Id="AppFilesAndFoldersToBeInstalled" Title="!(loc.AppName)" Level="1" Absent="disallow" AllowAdvertise="no">
       <ComponentGroupRef Id="RootFolderFiles" />
       <ComponentGroupRef Id="PytorchGPT2XLFiles" />
       <ComponentRef Id="CleanUpInstallDirectory" />

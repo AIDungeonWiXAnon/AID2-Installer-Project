@@ -41,64 +41,15 @@
   <ItemGroup>
     <Folder Include="Assets" />
     <Folder Include="SourceFiles" />
-    <Folder Include="SourceFiles\data" />
-    <Folder Include="SourceFiles\images" />
-    <Folder Include="SourceFiles\interface" />
     <Folder Include="SourceFiles\models" />
     <Folder Include="SourceFiles\models\pytorch-gpt2-xl-aid2-v5" />
-    <Folder Include="SourceFiles\prompts" />
-    <Folder Include="SourceFiles\prompts\cloveranon-prompts" />
-    <Folder Include="SourceFiles\saves" />
-    <Folder Include="SourceFiles\story" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Anaconda3-2019.10-Windows-x86_64.exe" />
     <Content Include="Assets\Background.bmp" />
     <Content Include="Assets\Banner.bmp" />
     <Content Include="Assets\LICENSE.rtf" />
-    <Content Include="SourceFiles\.gitignore" />
-    <Content Include="SourceFiles\changelog.txt" />
-    <Content Include="SourceFiles\config.ini" />
-    <Content Include="SourceFiles\convert_gpt2_model.py" />
-    <Content Include="SourceFiles\DATASETS.md" />
-    <Content Include="SourceFiles\data\build_training_data.py" />
-    <Content Include="SourceFiles\data\make_reddit_data.py" />
-    <Content Include="SourceFiles\data\mechturk.py" />
-    <Content Include="SourceFiles\data\scraper.py" />
-    <Content Include="SourceFiles\data\sheet_to_story.py" />
-    <Content Include="SourceFiles\data\text_adventures.txt" />
-    <Content Include="SourceFiles\data\upwork.csv" />
-    <Content Include="SourceFiles\download_model.sh" />
-    <Content Include="SourceFiles\getconfig.py" />
-    <Content Include="SourceFiles\gpt2generator.py" />
     <Content Include="SourceFiles\icon.ico" />
-    <Content Include="SourceFiles\images\install-video-screenshot.png" />
-    <Content Include="SourceFiles\images\retro1.jpg" />
-    <Content Include="SourceFiles\images\retro2.jpg" />
-    <Content Include="SourceFiles\images\retro3.jpg" />
-    <Content Include="SourceFiles\install.sh" />
-    <Content Include="SourceFiles\interface.py" />
-    <Content Include="SourceFiles\interface\clover" />
-    <Content Include="SourceFiles\interface\instructions.txt" />
-    <Content Include="SourceFiles\interface\mainTitle.txt" />
-    <Content Include="SourceFiles\interface\prompt-instructions.txt" />
-    <Content Include="SourceFiles\interface\start-message.txt" />
-    <Content Include="SourceFiles\interface\subTitle.txt" />
-    <Content Include="SourceFiles\LICENSE" />
-    <Content Include="SourceFiles\model.torrent" />
-    <Content Include="SourceFiles\models\.gitkeep" />
     <Content Include="SourceFiles\models\pytorch-gpt2-xl-aid2-v5\Everything from the torrent goes in here" />
-    <Content Include="SourceFiles\pastebin.py" />
-    <Content Include="SourceFiles\play.py" />
-    <Content Include="SourceFiles\prompts\cloveranon-prompts\GNU+Linux.txt" />
-    <Content Include="SourceFiles\prompts\cloveranon-prompts\kornilov.txt" />
-    <Content Include="SourceFiles\README.md" />
-    <Content Include="SourceFiles\requirements.txt" />
-    <Content Include="SourceFiles\saves\.gitkeep" />
-    <Content Include="SourceFiles\story\story_manager.py" />
-    <Content Include="SourceFiles\story\utils.py" />
-    <Content Include="SourceFiles\story\__init__.py" />
-    <Content Include="SourceFiles\test-models.py" />
   </ItemGroup>
   <ItemGroup>
     <WixExtension Include="WixUtilExtension">
