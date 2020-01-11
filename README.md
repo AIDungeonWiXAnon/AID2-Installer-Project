@@ -6,7 +6,7 @@ Currently the system is a web-based installer that will pull the latest versions
 
 ## Getting Started
 
-These instructions will get you a copy of the project up so that you can fiddle around with it. If you'd rather just download an exe and install the game, [see deployment](https://github.com/AIDungeonWiXAnon/AID2-Installer-Project#deployment) for notes on that.
+These instructions will get you a copy of the project up so that you can fiddle around with it. If you'd rather just download an exe and install the game, then please check the [releases tab for this repo](https://github.com/AIDungeonWiXAnon/AID2-Installer-Project/releases/latest) for a nice, fancy download button to click that'll give you the latest version of the installer!
 
 ### Prerequisites
 
@@ -44,10 +44,6 @@ Select "Open a project" in VS and select the .sln
 Congrats, that's it! From there you should be able to compile the project.  
 If you run into any issues, it's likely references being in new locations: make sure to update the references to WixUIExtension & WixUtilExtension for the .msi installer, and WixBalExtension & WixUtilExtension for the .exe bootstrapper.
 
-## Deployment
-
-Check the [releases tab for this repo](https://github.com/AIDungeonWiXAnon/AID2-Installer-Project/releases) for a nice, fancy download button to click that'll give you the latest version of the installer!
-
 ## Built With
 
 * [Visual Studio](https://visualstudio.microsoft.com/) - The IDE used for source code development
@@ -66,12 +62,12 @@ Localization files (.xwl) would be especially nice for anons out there who don't
 ## Versioning
 
 Currently versions are based on an X.Y versioning, where X is the major release version and Y is the patch for that version.
-Additionally, the application GUID is edited for each major version of the installer and upgrade code GUIDs will be changed per-branch (local-based and web-based, for instance) for the installer/bootstrapper themselves.
+Additionally, the application GUID is edited for each noteable (i.e. released) version of the installer and upgrade code GUIDs will be changed per-branch (local-based and web-based, for instance) for the installer/bootstrapper themselves.
 
 ## Authors
 
-* **Cloveranon** - *Dev of the Clover Edition that this installer uses* - [AID2 Clover Edition](https://github.com/cloveranon/Clover-Edition)
-* **Friendly /vp/oreon** - *Me, dev of this installer and its related bootstrapper*
+* **Cloveranon** - *Author of Clover Edition, the game that this installer configures & installs* - [AID2 Clover Edition](https://github.com/cloveranon/Clover-Edition)
+* **Friendly /vp/oreon** - *Me, author of this installer and its related bootstrapper*
 
 ## Acknowledgments
 
