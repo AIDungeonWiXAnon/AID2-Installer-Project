@@ -18,9 +18,9 @@
     <CustomAction Id="RepoInstall" Property="CMD" ExeCommand="/C title Clover Installer &amp; color f0 &amp; echo Initializing... &amp; git clone https://github.com/cloveranon/Clover-Edition.git &quot;[INSTALLDIR]AID2 Clover Edition&quot; &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
 
     <!-- TODO: Check GPU VRAM and warn if underneath at least 4GB of VRAM -->
-    <CustomAction Id="GPU1_CUDASetup" Property="CMD" ExeCommand="/C title Pytorch Installer &amp; color f0 &amp; echo Initializing... &amp; conda install pytorch cudatoolkit=10.1 -c pytorch --yes &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
+    <CustomAction Id="GPU1_CUDASetup" Property="CMD" ExeCommand="/C title PyTorch Installer &amp; color f0 &amp; echo Initializing... &amp; conda install pytorch cudatoolkit=10.1 -c pytorch --yes &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
     <CustomAction Id="GPU2_CUDASetup" Property="CMD" ExeCommand="/C title cuDNN Installer &amp; color f0 &amp; echo Initializing... &amp; conda install -c anaconda cudnn --yes &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
-    <CustomAction Id="CPU_CUDASetup" Property="CMD" ExeCommand="/C title Pytorch Installer &amp; color f0 &amp; echo Initializing... &amp; conda install pytorch cpuonly -c pytorch --yes &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
+    <CustomAction Id="CPU_CUDASetup" Property="CMD" ExeCommand="/C title PyTorch Installer &amp; color f0 &amp; echo Initializing... &amp; conda install pytorch cpuonly -c pytorch --yes &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
 
     <CustomAction Id="Advanced_PythonPackageSetup" Property="CMD" ExeCommand="/C title Package Installer &amp; color f0 &amp; echo Initializing... &amp; pip install transformers colorama prompt-toolkit &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
     <CustomAction Id="Basic_PythonPackageSetup" Property="CMD" ExeCommand="/C title Package Installer &amp; color f0 &amp; echo Initializing... &amp; pip install transformers colorama &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
