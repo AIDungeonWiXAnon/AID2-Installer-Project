@@ -11,8 +11,8 @@
   Additionally includes support for GPU/CPU-based CUDA installations, accountless cuDNN install, automatic torrent download, and optional color in terminals.
   -->
   
-  <?define BuildNumber = 1.1?>
-  <?define UpgradeGUID = {EA66A954-56AF-47DD-B4E1-E4F365CD2694}?>
+  <?define BuildNumber = 1.2?>
+  <?define UpgradeGUID = {AC7932B0-D581-4A86-B3B0-448590E50204}?>
   
   <Bundle Name="!(loc.AppName)"
           Version="$(var.BuildNumber)"

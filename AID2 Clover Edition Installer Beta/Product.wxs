@@ -7,8 +7,8 @@
   -->
   
   <!-- TODO: Link these to ACTUAL assembly parameters -->
-  <?define AppGUID = {7859AC22-C84D-48BB-BC07-D0DE590749C5}?>
-  <?define BuildNumber = 1.1?>
+  <?define AppGUID = {8933F9BA-29B9-45BE-9FA3-D50493C3556A}?>
+  <?define BuildNumber = 1.2?>
   <?define UpgradeGUID = {DBEBB261-6A40-4B5E-8410-4F26406C3EB2}?>
   
   <Product Id="$(var.AppGUID)"
@@ -107,11 +107,11 @@
       <Custom Action="CPU_CUDASetup" After="RepoInstall">
         <![CDATA[NOT GPUACCELERATION]]> AND NOT Installed
       </Custom>
-      <Custom Action="Color_PythonPackageSetup" After="InstallFiles">
-        <![CDATA[COLORTERMINALSUPPORT]]> AND NOT Installed
+      <Custom Action="Advanced_PythonPackageSetup" After="InstallFiles">
+        <![CDATA[ADVTERMINALSUPPORT]]> AND NOT Installed
       </Custom>
-      <Custom Action="NoColor_PythonPackageSetup" After="InstallFiles">
-        <![CDATA[NOT COLORTERMINALSUPPORT]]> AND NOT Installed
+      <Custom Action="Basic_PythonPackageSetup" After="InstallFiles">
+        <![CDATA[NOT ADVTERMINALSUPPORT]]> AND NOT Installed
       </Custom>
       <Custom Action="InstallTorrent" After="InstallFinalize">
         <![CDATA[INSTALLTORRENT]]> AND NOT Installed

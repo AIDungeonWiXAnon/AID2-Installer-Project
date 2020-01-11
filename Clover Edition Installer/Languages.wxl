@@ -7,7 +7,7 @@
   -->
 
   <!-- Not planning on localized releases anytime soon, but setting up the support for it anyway down the line -->
-  <String Id="AppName">AID2 Pytorch Clover Edition</String>
+  <String Id="AppName">AI Dungeon 2 PyTorch Clover Edition</String>
   <String Id="Developer">Friendly /vp/oreon</String>
   <String Id="BuildMessage">This application is only supported on Windows 7, Windows Server 2008 R2, or higher.</String>
   <String Id="ArchitectureMessage">This application is only support on 64-bit installations of Windows.</String>
