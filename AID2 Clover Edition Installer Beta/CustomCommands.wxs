@@ -17,7 +17,7 @@
     <CustomAction Id="GITSetup" Property="CMD" ExeCommand="/C title Git Installer &amp; color f0 &amp; echo Initializing... &amp; conda install git --yes &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
     <CustomAction Id="RepoInstall" Property="CMD" ExeCommand="/C title Clover Installer &amp; color f0 &amp; echo Initializing... &amp; git clone https://github.com/cloveranon/Clover-Edition.git &quot;[INSTALLDIR]AID2 Clover Edition&quot; &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
 
-    <!-- TODO: Check GPU VRAM and warn if underneath at least 4GB of VRAM -->
+    <!-- TODO: Check GPU VRAM/CPU RAM and warn if underneath at least 4GB of VRAM/16GB of RAM -->
     <CustomAction Id="GPU1_CUDASetup" Property="CMD" ExeCommand="/C title PyTorch Installer &amp; color f0 &amp; echo Initializing... &amp; conda install pytorch cudatoolkit=10.1 -c pytorch --yes &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
     <CustomAction Id="GPU2_CUDASetup" Property="CMD" ExeCommand="/C title cuDNN Installer &amp; color f0 &amp; echo Initializing... &amp; conda install -c anaconda cudnn --yes &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
     <CustomAction Id="CPU_CUDASetup" Property="CMD" ExeCommand="/C title PyTorch Installer &amp; color f0 &amp; echo Initializing... &amp; conda install pytorch cpuonly -c pytorch --yes &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />

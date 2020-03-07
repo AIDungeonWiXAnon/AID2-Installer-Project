@@ -8,8 +8,8 @@
   
   <!-- TODO: Link these to ACTUAL assembly parameters -->
   <?define AppGUID = {8933F9BA-29B9-45BE-9FA3-D50493C3556A}?>
-  <?define BuildNumber = 1.2?>
-  <?define UpgradeGUID = {DBEBB261-6A40-4B5E-8410-4F26406C3EB2}?>
+  <?define BuildNumber = 1.3?>
+  <?define UpgradeGUID = {0A463F62-D95C-4719-A61F-57762770C698}?>
   
   <Product Id="$(var.AppGUID)"
            Name="!(loc.AppName)"
