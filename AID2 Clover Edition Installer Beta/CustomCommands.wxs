@@ -22,8 +22,8 @@
     <CustomAction Id="GPU2_CUDASetup" Property="CMD" ExeCommand="/C title cuDNN Installer &amp; color f0 &amp; echo Initializing... &amp; conda install -c anaconda cudnn --yes &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
     <CustomAction Id="CPU_CUDASetup" Property="CMD" ExeCommand="/C title PyTorch Installer &amp; color f0 &amp; echo Initializing... &amp; conda install pytorch cpuonly -c pytorch --yes &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
 
-    <CustomAction Id="Advanced_PythonPackageSetup" Property="CMD" ExeCommand="/C title Package Installer &amp; color f0 &amp; echo Initializing... &amp; pip install transformers colorama prompt-toolkit &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
-    <CustomAction Id="Basic_PythonPackageSetup" Property="CMD" ExeCommand="/C title Package Installer &amp; color f0 &amp; echo Initializing... &amp; pip install transformers colorama &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
+    <CustomAction Id="Advanced_PythonPackageSetup" Property="CMD" ExeCommand="/C title Package Installer &amp; color f0 &amp; echo Initializing... &amp; pip install transformers==2.3.0 colorama prompt-toolkit &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
+    <CustomAction Id="Basic_PythonPackageSetup" Property="CMD" ExeCommand="/C title Package Installer &amp; color f0 &amp; echo Initializing... &amp; pip install transformers==2.3.0 colorama &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
 
     <CustomAction Id="InstallTorrent" Property="CMD" ExeCommand="/C title Torrent Installer &amp; color f0 &amp; echo Initializing... &amp; &quot;[INSTALLFOLDER]model.torrent&quot; &amp;&amp; exit /b 0" Execute="immediate" Impersonate="yes" Return="check" />
   </Fragment>
