@@ -18,7 +18,7 @@
           Version="$(var.BuildNumber)"
           Manufacturer="!(loc.Developer)"
           UpgradeCode="$(var.UpgradeGUID)"
-          IconSourceFile="$(var.AID2 Clover Edition Installer Beta.ProjectDir)SourceFiles\icon.ico"
+          IconSourceFile="$(var.AID2 Clover Edition Installer.ProjectDir)SourceFiles\icon.ico"
           Compressed="yes">
 
     <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense">
@@ -57,7 +57,7 @@
 
       <RollbackBoundary Id="PostMiniconda3" />
 
-      <MsiPackage Id="AID2CloverEdition" SourceFile="$(var.AID2 Clover Edition Installer Beta.ProjectDir)bin\x64\Release\!(loc.LangaugeDirectory)\AID2-Clover-Edition-Installer-Beta.msi" Compressed="yes" Vital="yes" DisplayInternalUI="yes" />
+      <MsiPackage Id="AID2CloverEdition" SourceFile="$(var.AID2 Clover Edition Installer.ProjectDir)bin\x64\Release\!(loc.LangaugeDirectory)\AID2-Clover-Edition-Installer-Beta.msi" Compressed="yes" Vital="yes" DisplayInternalUI="yes" />
 		</Chain>
 	</Bundle>
 </Wix>

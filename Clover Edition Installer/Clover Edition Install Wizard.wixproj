@@ -45,22 +45,22 @@
     <EmbeddedResource Include="Languages.wxl" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AID2 Clover Edition Installer Beta\AID2 Clover Edition Installer Beta.wixproj">
-      <Name>AID2 Clover Edition Installer Beta</Name>
-      <Project>{a51c4f24-2f4c-45d5-864d-ae6eedbd7a6d}</Project>
-      <Private>True</Private>
-      <DoNotHarvest>True</DoNotHarvest>
-      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
-      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Assets" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\icon.png" />
     <Content Include="Assets\Miniconda3-latest-Windows-x86_64.exe" />
     <Content Include="Assets\README.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AID2 Clover Edition Installer\AID2 Clover Edition Installer.wixproj">
+      <Name>AID2 Clover Edition Installer</Name>
+      <Project>{a51c4f24-2f4c-45d5-864d-ae6eedbd7a6d}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />
