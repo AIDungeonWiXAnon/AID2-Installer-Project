@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "AID2 Clover Edition Installer Beta", "AID2 Clover Edition Installer Beta\AID2 Clover Edition Installer Beta.wixproj", "{A51C4F24-2F4C-45D5-864D-AE6EEDBD7A6D}"
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "AID2 Clover Edition Installer", "AID2 Clover Edition Installer\AID2 Clover Edition Installer.wixproj", "{A51C4F24-2F4C-45D5-864D-AE6EEDBD7A6D}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Clover Edition Install Wizard", "Clover Edition Installer\Clover Edition Install Wizard.wixproj", "{B1B4772D-79AF-4119-BE11-7295077A3FFC}"
 EndProject
