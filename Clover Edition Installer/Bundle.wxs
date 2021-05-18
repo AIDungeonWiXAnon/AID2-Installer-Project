@@ -49,7 +49,7 @@
           Result="exists"
           Win64="yes"
           Root="HKLM"
-          Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Miniconda3 4.7.12 (Python 3.7.4 64-bit)"/>
+          Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Miniconda3 py38_4.9.2 (Python 3.8.5 64-bit)"/>
     
     
 		<Chain>
