@@ -2,7 +2,7 @@
 
 This repo's main focus is providing an easy-to-use, intuitive, and comprehensive installer for [AI Dungeon 2: Clover Edition](https://github.com/cloveranon/Clover-Edition). It will handle install of the Github repo, CUDA, cuDNN, Python, and all related packages, plus any configuration options that need to be made (such as downloading the torrent.)
 
-Currently the system is a web-based installer that will pull the latest versions of Clover Edition, Git, Python 3.7, CUDA, cuDNN, and their related packages (such as transformers).
+Currently the system is a web-based installer that will pull the latest versions of Clover Edition, Git, Python 3.8, CUDA, cuDNN, and their related packages (such as transformers).
 
 ## Getting Started
 
