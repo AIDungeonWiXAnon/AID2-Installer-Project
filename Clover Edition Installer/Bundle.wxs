@@ -11,14 +11,14 @@
   Additionally includes support for GPU/CPU-based CUDA installations, accountless cuDNN install, automatic torrent download, and optional color in terminals.
   -->
   
-  <?define BuildNumber = 1.3?>
+  <?define BuildNumber = 1.4?>
   <?define UpgradeGUID = {95A99807-6641-413C-9595-9FA2BA83C2AB}?>
   
   <Bundle Name="!(loc.AppName)"
           Version="$(var.BuildNumber)"
           Manufacturer="!(loc.Developer)"
           UpgradeCode="$(var.UpgradeGUID)"
-          IconSourceFile="$(var.AID2 Clover Edition Installer Beta.ProjectDir)SourceFiles\icon.ico"
+          IconSourceFile="$(var.AID2 Clover Edition Installer.ProjectDir)SourceFiles\icon.ico"
           Compressed="yes">
 
     <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense">
@@ -49,15 +49,15 @@
           Result="exists"
           Win64="yes"
           Root="HKLM"
-          Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Miniconda3 4.7.12 (Python 3.7.4 64-bit)"/>
+          Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Miniconda3 py38_4.9.2 (Python 3.8.5 64-bit)"/>
     
     
 		<Chain>
-      <ExePackage Id="Miniconda3" SourceFile="$(var.ProjectDir)Assets\Miniconda3-latest-Windows-x86_64.exe" Compressed="yes" PerMachine="yes" InstallCondition="NOT MinicondaFoundx64" InstallCommand="/InstallationType=AllUsers /AddToPath=1 RegisterPython=1 /S /D=[ProgramFiles64Folder]Miniconda3" />
+      <ExePackage Id="Miniconda3" SourceFile="$(var.ProjectDir)Assets\Miniconda3-latest-Windows-x86_64.exe" Compressed="yes" PerMachine="yes" InstallCondition="NOT MinicondaFoundx64" InstallCommand="/InstallationType=AllUsers /AddToPath=1 RegisterPython=1 /S /D=C:\Users\[LogonUser]\Miniconda3" />
 
       <RollbackBoundary Id="PostMiniconda3" />
 
-      <MsiPackage Id="AID2CloverEdition" SourceFile="$(var.AID2 Clover Edition Installer Beta.ProjectDir)bin\x64\Release\!(loc.LangaugeDirectory)\AID2-Clover-Edition-Installer-Beta.msi" Compressed="yes" Vital="yes" DisplayInternalUI="yes" />
+      <MsiPackage Id="AID2CloverEdition" SourceFile="$(var.AID2 Clover Edition Installer.ProjectDir)bin\x64\Release\!(loc.LangaugeDirectory)\AID2-Clover-Edition-Installer.msi" Compressed="yes" Vital="yes" DisplayInternalUI="yes" />
 		</Chain>
 	</Bundle>
 </Wix>

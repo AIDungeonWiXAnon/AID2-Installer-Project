@@ -6,8 +6,9 @@
     <ProductVersion>3.10</ProductVersion>
     <ProjectGuid>a51c4f24-2f4c-45d5-864d-ae6eedbd7a6d</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>AID2-Clover-Edition-Installer-Beta</OutputName>
+    <OutputName>AID2-Clover-Edition-Installer</OutputName>
     <OutputType>Package</OutputType>
+    <Name>AID2 Clover Edition Installer</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <OutputPath>bin\$(Configuration)\</OutputPath>
