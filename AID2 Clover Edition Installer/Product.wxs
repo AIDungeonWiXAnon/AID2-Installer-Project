@@ -98,10 +98,7 @@
       <Custom Action="RepoInstall" After="GITSetup">
         NOT Installed
       </Custom>
-      <Custom Action="GPU1_CUDASetup" After="RepoInstall">
-        <![CDATA[GPUACCELERATION]]> AND NOT Installed
-      </Custom>
-      <Custom Action="GPU2_CUDASetup" After="GPU1_CUDASetup">
+      <Custom Action="GPU_CUDASetup" After="RepoInstall">
         <![CDATA[GPUACCELERATION]]> AND NOT Installed
       </Custom>
       <Custom Action="CPU_CUDASetup" After="RepoInstall">
