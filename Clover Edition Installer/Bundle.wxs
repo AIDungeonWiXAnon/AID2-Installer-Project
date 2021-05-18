@@ -53,11 +53,11 @@
     
     
 		<Chain>
-      <ExePackage Id="Miniconda3" SourceFile="$(var.ProjectDir)Assets\Miniconda3-latest-Windows-x86_64.exe" Compressed="yes" PerMachine="yes" InstallCondition="NOT MinicondaFoundx64" InstallCommand="/InstallationType=AllUsers /AddToPath=1 RegisterPython=1 /S /D=[ProgramFiles64Folder]Miniconda3" />
+      <ExePackage Id="Miniconda3" SourceFile="$(var.ProjectDir)Assets\Miniconda3-latest-Windows-x86_64.exe" Compressed="yes" PerMachine="yes" InstallCondition="NOT MinicondaFoundx64" InstallCommand="/InstallationType=AllUsers /AddToPath=1 RegisterPython=1 /S /D=C:\Users\[LogonUser]\Miniconda3" />
 
       <RollbackBoundary Id="PostMiniconda3" />
 
-      <MsiPackage Id="AID2CloverEdition" SourceFile="$(var.AID2 Clover Edition Installer.ProjectDir)bin\x64\Release\!(loc.LangaugeDirectory)\AID2-Clover-Edition-Installer-Beta.msi" Compressed="yes" Vital="yes" DisplayInternalUI="yes" />
+      <MsiPackage Id="AID2CloverEdition" SourceFile="$(var.AID2 Clover Edition Installer.ProjectDir)bin\x64\Release\!(loc.LangaugeDirectory)\AID2-Clover-Edition-Installer.msi" Compressed="yes" Vital="yes" DisplayInternalUI="yes" />
 		</Chain>
 	</Bundle>
 </Wix>
